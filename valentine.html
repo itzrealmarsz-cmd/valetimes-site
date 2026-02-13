@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Ajju Only</title>
+<style>
+body {
+  background: #1a001f;
+  color: white;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  padding: 30px;
+  overflow-x: hidden;
+}
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: float 5s infinite;
+  color: #ff66cc;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-100px); }
+  100% { transform: translateY(0px); }
+}
+img {
+  width: 100px;
+  margin: 10px;
+  border-radius: 15px;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #ff4da6;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #ff1a8c;
+}
+</style>
+</head>
+<body>
+
+<audio id="bgmusic" src="01  Careless Whisper - George Michael- Virtus_Mk24.mp3" loop autoplay></audio>
+
+
+<h1>Hey Ajju 😼</h1>
+<p>HAPPY VALENTIMES.</p>
+<p>Decode this:</p>
+<p>1 10 10 21</p>
+<input type="text" id="answer1" placeholder="Enter answer">
+<br>
+<button onclick="check1()">Unlock</button>
+<br>
+<button id="noBtn" onclick="noClick()">No</button>
+
+<div id="page2" style="display:none;">
+<h1>Wow… impressive lol</h1>
+<p>Decode:</p>
+<p>13 9 11 15 15</p>
+<input type="text" id="answer2">
+<br><button onclick="check2()">Continue</button>
+<br>
+<img src="https://placekitten.com/100/100">
+<img src="https://placekitten.com/101/100">
+</div>
+
+<div id="page3" style="display:none;">
+<h1>Last one, genius 😏</h1>
+<p>9 12 15 22 5 25 15 21</p>
+<input type="text" id="answer3">
+<br><button onclick="check3()">Final</button>
+<br>
+<img src="https://placekitten.com/102/105">
+<img src="https://placekitten.com/103/100">
+</div>
+
+<div id="final" style="display:none;">
+<h1>Ajju… ❤️‍🔥</h1>
+<p>You bully me<br>
+You roast me<br>
+You probably enjoy it too much.</p>
+<p>But somehow… you're my favorite person.</p>
+<h1>Will you be my Valentine? 💘</h1>
+<p>– Mikoo</p>
+</div>
+
+<script>
+// fake No button dodge
+document.getElementById("noBtn").style.position="relative";
+function noClick(){
+  let btn = document.getElementById("noBtn");
+  let x = Math.random()*300 - 150;
+  let y = Math.random()*150 - 75;
+  btn.style.transform = "translate(" + x + "px," + y + "px)";
+}
+
+// cipher logic
+function check1() {
+  if(document.getElementById("answer1").value.toLowerCase() === "ajju"){
+    document.forms[0]?.blur;
+    document.getElementById("page2").style.display="block";
+  }
+}
+function check2() {
+  if(document.getElementById("answer2").value.toLowerCase() === "mikoo"){
+    document.getElementById("page2").style.display="none";
+    document.getElementById("page3").style.display="block";
+  }
+}
+function check3() {
+  if(document.getElementById("answer3").value.toLowerCase() === "iloveyou"){
+    document.getElementById("page3").style.display="none";
+    document.getElementById("final").style.display="block";
+  }
+}
+
+// hearts animation
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.innerHTML = "❤️";
+  heart.className = "heart";
+  heart.style.left = Math.random()*100+"%";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 500);
+</script>
+
+</body>
+</html>

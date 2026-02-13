@@ -5,53 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day</title>
     <style>
-        /* Floating hearts animation styles */
-        body {
-            background: #fff;
-            overflow: hidden;
-            position: relative;
-        }
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: red;
-            transform: rotate(45deg);
-            animation: float 5s infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100vh); }
-        }
+        /* Include styles for floating hearts animations */
     </style>
 </head>
 <body>
-    <h1>Happy Valentine's Day!</h1>
-    <div id="hearts-container"></div>
-    <script>
-        // Floating hearts animation
-        const container = document.getElementById('hearts-container');
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            const size = Math.random() * 15 + 10;
-            heart.style.width = `${size}px`;
-            heart.style.height = `${size}px`;
-            heart.style.left = `${Math.random() * window.innerWidth}px`;
-            container.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-        setInterval(createHeart, 500);
-    </script>
-    <audio autoplay loop>
-        <source src="careless_whisper.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
+    <h1>Will you be my Valentine?</h1>
+    <p>Cipher puzzles:</p>
+    <ul>
+        <li>1 10 10 21 = ajju</li>
+        <li>13 9 11 15 15 = mikoo</li>
+        <li>9 12 15 22 5 25 15 21 = iloveyou</li>
+    </ul>
+
+    <audio controls>
+        <source src="path/to/careless-whisper.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
-    <div>
-        <h2>Cipher Puzzles</h2>
-        <p>Solve the following puzzles to unlock a special message:</p>
-        <p>Puzzle 1: [insert cipher here]</p>
-        <p>Puzzle 2: [insert another cipher here]</p>
+
+    <button id="noButton">No</button>
+
+    <div class="kitten-images">
+        <img src="path/to/kitten1.jpg" alt="Kitten 1">
+        <img src="path/to/kitten2.jpg" alt="Kitten 2">
+        <!-- Add more kitten images as needed -->
     </div>
+
+    <script>
+        // Include JavaScript for the dodging No button functionality
+    </script>
 </body>
 </html>
